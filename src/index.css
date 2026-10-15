@@ -117,7 +117,8 @@ svg {
   padding: 20px var(--pad-inline);
   border-bottom: 1px solid var(--line);
   background: var(--paper);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
 }
 
@@ -624,7 +625,7 @@ svg {
 }
 
 .social-row a {
-  font-size: 15px;
+  display: inline-flex;
   color: var(--ink);
 }
 
@@ -655,6 +656,30 @@ svg {
   gap: 20px;
 }
 
+/* ---------- page transition ---------- */
+
+/* the nav stays put; everything else eases in on route change */
+.route-fade > * > :not(.nav) {
+  animation: page-in 0.4s ease-out both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-fade > * > :not(.nav) {
+    animation: none;
+  }
+}
+
 /* ---------- utility ---------- */
 
 .text-max {
@@ -662,6 +687,45 @@ svg {
 }
 
 @media (max-width: 640px) {
+  .nav {
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding-block: 14px;
+  }
+
+  .nav__brand {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .nav__brand-name {
+    font-size: 15px;
+    line-height: 1.1;
+  }
+
+  .nav__links {
+    flex: 1;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 12px;
+    white-space: nowrap;
+  }
+
+  .nav__link {
+    font-size: 13px;
+  }
+
+  /* the "Partner with us" button already links to /contact */
+  .nav__link[href='/contact'] {
+    display: none;
+  }
+
+  .nav__links .btn {
+    margin-left: auto;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
   .footer__top {
     gap: 40px;
   }
