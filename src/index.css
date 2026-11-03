@@ -459,11 +459,6 @@ svg {
   gap: 56px;
 }
 
-.footer--compact {
-  padding: 32px var(--pad-inline) 32px;
-  gap: 24px;
-}
-
 .footer__top {
   display: flex;
   gap: 64px;
