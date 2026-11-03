@@ -1,20 +1,20 @@
 :root {
-  --ink: #14170f;
-  --paper: #f1efe2;
-  --surface: #fbfaf4;
-  --amber: #d08a2c;
-  --amber-dark: #b5751f;
-  --jade: #1f5d4c;
-  --jade-light: #5fa98c;
+  --ink: #0f2347;
+  --paper: #f7f6f1;
+  --surface: #fdfcf9;
+  --gold: #e6b030;
+  --gold-dark: #c99620;
+  --navy: #1d3f78;
+  --navy-light: #8aaee0;
   --rust: #ad4a26;
-  --ink-soft: #4b4a3c;
-  --ink-faint: #7a7968;
-  --line: rgba(20, 23, 15, 0.14);
-  --line-strong: rgba(20, 23, 15, 0.25);
-  --line-dark: rgba(241, 239, 226, 0.2);
-  --line-dark-strong: rgba(241, 239, 226, 0.35);
-  --paper-soft: rgba(241, 239, 226, 0.72);
-  --paper-faint: rgba(241, 239, 226, 0.5);
+  --ink-soft: #3d4a63;
+  --ink-faint: #6b768c;
+  --line: rgba(15, 35, 71, 0.14);
+  --line-strong: rgba(15, 35, 71, 0.25);
+  --line-dark: rgba(247, 246, 241, 0.2);
+  --line-dark-strong: rgba(247, 246, 241, 0.35);
+  --paper-soft: rgba(247, 246, 241, 0.72);
+  --paper-faint: rgba(247, 246, 241, 0.5);
   --font-display: 'Zilla Slab', Georgia, 'Times New Roman', serif;
   --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --max-width: 1180px;
@@ -69,7 +69,7 @@ svg {
 }
 
 :focus-visible {
-  outline: 2px solid var(--jade);
+  outline: 2px solid var(--navy);
   outline-offset: 2px;
 }
 
@@ -98,8 +98,8 @@ svg {
   border-bottom: 1px solid var(--line);
 }
 
-.section--jade {
-  background: var(--jade);
+.section--navy {
+  background: var(--navy);
 }
 
 .section--bordered-top {
@@ -181,12 +181,12 @@ svg {
 }
 
 .btn--primary {
-  background: var(--amber);
+  background: var(--gold);
   color: var(--ink);
 }
 
 .btn--primary:hover {
-  background: var(--amber-dark);
+  background: var(--gold-dark);
 }
 
 .btn--outline {
@@ -218,15 +218,15 @@ svg {
   pointer-events: none;
   background-image: repeating-linear-gradient(
       115deg,
-      rgba(208, 138, 44, 0.09) 0px,
-      rgba(208, 138, 44, 0.09) 1px,
+      rgba(230, 176, 48, 0.09) 0px,
+      rgba(230, 176, 48, 0.09) 1px,
       transparent 1px,
       transparent 64px
     ),
     repeating-linear-gradient(
       25deg,
-      rgba(95, 169, 140, 0.07) 0px,
-      rgba(95, 169, 140, 0.07) 1px,
+      rgba(138, 174, 224, 0.07) 0px,
+      rgba(138, 174, 224, 0.07) 1px,
       transparent 1px,
       transparent 92px
     );
@@ -336,7 +336,7 @@ svg {
 
 .card {
   padding-top: 20px;
-  border-top: 2px solid var(--amber);
+  border-top: 2px solid var(--gold);
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -480,7 +480,7 @@ svg {
 .footer__col--details {
   gap: 10px;
   font-size: 15px;
-  color: rgba(241, 239, 226, 0.85);
+  color: rgba(247, 246, 241, 0.85);
 }
 
 .footer__label {
@@ -495,7 +495,7 @@ svg {
 }
 
 .footer__link:hover {
-  color: var(--amber);
+  color: var(--gold);
 }
 
 .footer__bottom {
@@ -515,7 +515,7 @@ svg {
 }
 
 .footer__bottom-links a:hover {
-  color: var(--amber);
+  color: var(--gold);
 }
 
 /* ---------- about page text blocks ---------- */
@@ -584,7 +584,7 @@ svg {
 }
 
 .field:focus-visible {
-  outline: 2px solid var(--jade);
+  outline: 2px solid var(--navy);
   outline-offset: 1px;
 }
 

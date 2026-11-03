@@ -10,7 +10,7 @@ export default function Services() {
       <Nav />
       <PageHero eyebrow="Our services" title="Financing and advisory for every stage of the transition" />
 
-      <section className="section--tight section section--jade">
+      <section className="section--tight section section--navy">
         <h2 className="heading-lg" style={{ color: 'var(--paper)', marginBottom: 32, fontSize: 'clamp(22px, 2.2vw, 26px)' }}>
           Sectors we serve
         </h2>

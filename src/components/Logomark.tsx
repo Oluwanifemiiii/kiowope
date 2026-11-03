@@ -2,13 +2,28 @@ interface LogomarkProps {
   size?: number
 }
 
-export default function Logomark({ size = 26 }: LogomarkProps) {
+const diamonds = [
+  { x: 50, y: 24, fill: '#1D3F78' },
+  { x: 24, y: 50, fill: '#E6B030' },
+  { x: 76, y: 50, fill: '#E6B030' },
+  { x: 50, y: 76, fill: '#1D3F78' },
+]
+
+export default function Logomark({ size = 32 }: LogomarkProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <path d="M4 22 L14 8 L24 16" stroke="#D08A2C" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="4" cy="22" r="3" fill="#14170F" />
-      <circle cx="14" cy="8" r="3" fill="#D08A2C" />
-      <circle cx="24" cy="16" r="3" fill="#14170F" />
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      {diamonds.map((d) => (
+        <rect
+          key={`${d.x}-${d.y}`}
+          x={-15}
+          y={-15}
+          width={30}
+          height={30}
+          rx={5.5}
+          fill={d.fill}
+          transform={`translate(${d.x} ${d.y}) rotate(45)`}
+        />
+      ))}
     </svg>
   )
 }

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 interface CTASectionProps {
   title: string
   buttonLabel: string
-  tone?: 'jade' | 'ink'
+  tone?: 'navy' | 'ink'
 }
 
-export default function CTASection({ title, buttonLabel, tone = 'jade' }: CTASectionProps) {
+export default function CTASection({ title, buttonLabel, tone = 'navy' }: CTASectionProps) {
   return (
     <section className={`section section--${tone}`}>
       <div className="cta-band">

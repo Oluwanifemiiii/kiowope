@@ -10,9 +10,9 @@ export default function Home() {
 
       <section id="top" className="hero">
         <div className="hero__texture" />
-        <div className="hero__node" style={{ width: 9, height: 9, background: 'var(--amber)', opacity: 0.55, top: '20%', left: '76%' }} />
-        <div className="hero__node" style={{ width: 6, height: 6, background: 'var(--jade-light)', opacity: 0.55, top: '64%', left: '85%' }} />
-        <div className="hero__node" style={{ width: 6, height: 6, background: 'var(--amber)', opacity: 0.4, top: '42%', left: '62%' }} />
+        <div className="hero__node" style={{ width: 9, height: 9, background: 'var(--gold)', opacity: 0.55, top: '20%', left: '76%' }} />
+        <div className="hero__node" style={{ width: 6, height: 6, background: 'var(--navy-light)', opacity: 0.55, top: '64%', left: '85%' }} />
+        <div className="hero__node" style={{ width: 6, height: 6, background: 'var(--gold)', opacity: 0.4, top: '42%', left: '62%' }} />
         <div className="hero__content">
           <p className="hero__eyebrow">Financing Africa's transition to sustainable mobility and infrastructure</p>
           <h1 className="hero__title">
@@ -105,7 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--jade">
+      <section className="section section--navy">
         <blockquote className="quote">
           <p className="quote__text">&quot;{missionQuote}&quot;</p>
         </blockquote>

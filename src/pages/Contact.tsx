@@ -16,25 +16,29 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', org: '', message: '' })
+  const [honeypot, setHoneypot] = useState('')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   function handleChange(field: keyof typeof form) {
     return (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((prev) => ({ ...prev, [field]: e.target.value }))
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const subject = encodeURIComponent(`Inquiry from ${form.name || 'website contact form'}`)
-    const bodyLines = [
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      `Phone: ${form.phone}`,
-      `Organization: ${form.org}`,
-      '',
-      form.message,
-    ]
-    const body = encodeURIComponent(bodyLines.join('\n'))
-    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
+    setStatus('sending')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, website: honeypot }),
+      })
+      if (!res.ok) throw new Error()
+      setForm({ name: '', email: '', phone: '', org: '', message: '' })
+      setStatus('sent')
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -81,12 +85,22 @@ export default function Contact() {
               required
             />
           </div>
-          <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }}>
-            Send message
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+          />
+          <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }} disabled={status === 'sending'}>
+            {status === 'sending' ? 'Sending...' : 'Send message'}
           </button>
-          <p style={{ fontSize: 13, color: 'var(--ink-faint)', margin: 0 }}>
-            Opens your email client with this message addressed to {contact.email}. Swap this for a form backend
-            (e.g. Formspree, a serverless function) before launch if you'd rather not rely on mailto.
+          <p role="status" style={{ fontSize: 14, margin: 0, color: status === 'error' ? 'var(--rust)' : 'var(--ink-soft)' }}>
+            {status === 'sent' && "Thank you. Your message has been sent and we'll be in touch soon."}
+            {status === 'error' && `Something went wrong sending your message. Please try again or email ${contact.email}.`}
           </p>
         </form>
 

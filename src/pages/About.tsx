@@ -64,7 +64,7 @@ export default function About() {
       <CTASection
         title="Structuring the capital behind Africa's electric mobility shift, one project at a time."
         buttonLabel="Partner with us"
-        tone="jade"
+        tone="navy"
       />
 
       <Footer />

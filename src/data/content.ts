@@ -115,7 +115,7 @@ export const values: Value[] = [
 
 export const contact = {
   address: 'Suite WW16, Tafawa Balewa Square, Onikan, Lagos',
-  email: 'info@kiowopecapital.com',
+  email: 'james.clinton@kiowope.money',
   phone: '+234 803 487 2580',
   phoneHref: 'tel:+2348034872580',
   social: [
