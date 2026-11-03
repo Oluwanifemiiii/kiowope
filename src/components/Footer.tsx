@@ -24,7 +24,9 @@ export default function Footer({ variant = 'compact' }: FooterProps) {
           </div>
           <div className="footer__col footer__col--details" style={{ flex: '0 1 260px' }}>
             <span className="footer__label">Office</span>
-            <span>{contact.address}</span>
+            <a className="footer__link" href={contact.mapsUrl} target="_blank" rel="noreferrer">
+              {contact.address}
+            </a>
             <span className="footer__label" style={{ marginTop: 8 }}>
               Phone
             </span>
@@ -56,7 +58,9 @@ export default function Footer({ variant = 'compact' }: FooterProps) {
     <footer className="footer footer--compact">
       <div className="footer__bottom" style={{ paddingTop: 0, borderTop: 'none' }}>
         <span>&copy; {new Date().getFullYear()} Kiowope Capital Limited. All rights reserved.</span>
-        <span>{contact.address}</span>
+        <a className="footer__link" href={contact.mapsUrl} target="_blank" rel="noreferrer">
+          {contact.address}
+        </a>
       </div>
     </footer>
   )

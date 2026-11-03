@@ -115,6 +115,7 @@ export const values: Value[] = [
 
 export const contact = {
   address: 'Suite WW16, Tafawa Balewa Square, Onikan, Lagos',
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Suite+WW16,+Tafawa+Balewa+Square,+Onikan,+Lagos',
   email: 'james.clinton@kiowope.money',
   phone: '+234 803 487 2580',
   phoneHref: 'tel:+2348034872580',

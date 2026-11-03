@@ -715,11 +715,6 @@ svg {
     font-size: 13px;
   }
 
-  /* the "Partner with us" button already links to /contact */
-  .nav__link[href='/contact'] {
-    display: none;
-  }
-
   .nav__links .btn {
     margin-left: auto;
     padding: 8px 12px;

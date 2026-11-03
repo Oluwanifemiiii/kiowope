@@ -4,7 +4,6 @@ import Logomark from './Logomark'
 const links = [
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
-  { to: '/contact', label: 'Contact' },
 ]
 
 export default function Nav() {

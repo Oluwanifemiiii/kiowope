@@ -12,8 +12,6 @@ const socialIcons: Record<string, string> = {
   X: 'M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z',
 }
 
-const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`
-
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', org: '', message: '' })
   const [honeypot, setHoneypot] = useState('')
@@ -107,7 +105,7 @@ export default function Contact() {
         <div className="contact-details">
           <div className="contact-detail">
             <span className="contact-detail__label">Office</span>
-            <a className="contact-detail__link" href={mapsUrl} target="_blank" rel="noreferrer">
+            <a className="contact-detail__link" href={contact.mapsUrl} target="_blank" rel="noreferrer">
               {contact.address}
             </a>
           </div>
