@@ -114,7 +114,7 @@ svg {
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  padding: 20px var(--pad-inline);
+  padding: 10px var(--pad-inline);
   border-bottom: 1px solid var(--line);
   background: var(--paper);
   position: sticky;
@@ -128,11 +128,10 @@ svg {
   gap: 10px;
 }
 
-.nav__brand-name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 20px;
-  color: var(--ink);
+.nav__logo {
+  display: block;
+  height: 72px;
+  width: auto;
 }
 
 .nav__links {
@@ -460,10 +459,16 @@ svg {
 }
 
 .footer__top {
-  display: flex;
-  gap: 64px;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 480px minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.footer__logo {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .footer__col {
@@ -542,7 +547,7 @@ svg {
 /* ---------- contact form ---------- */
 
 .form {
-  flex: 1 1 420px;
+  flex: 1 1 480px;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -685,7 +690,7 @@ svg {
   .nav {
     flex-wrap: nowrap;
     gap: 12px;
-    padding-block: 14px;
+    padding-block: 8px;
   }
 
   .nav__brand {
@@ -693,9 +698,8 @@ svg {
     min-width: 0;
   }
 
-  .nav__brand-name {
-    font-size: 15px;
-    line-height: 1.1;
+  .nav__logo {
+    height: 54px;
   }
 
   .nav__links {
@@ -715,8 +719,17 @@ svg {
     padding: 8px 12px;
     font-size: 12px;
   }
+}
 
+@media (max-width: 960px) {
   .footer__top {
-    gap: 40px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer__logo {
+    order: -1;
+    width: min(480px, 100%);
   }
 }

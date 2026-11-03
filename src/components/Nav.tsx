@@ -1,5 +1,4 @@
 import { Link, NavLink } from 'react-router-dom'
-import Logomark from './Logomark'
 
 const links = [
   { to: '/about', label: 'About' },
@@ -10,8 +9,7 @@ export default function Nav() {
   return (
     <header className="nav">
       <Link to="/" className="nav__brand">
-        <Logomark />
-        <span className="nav__brand-name">Kiowope Capital</span>
+        <img src="/logo.svg" alt="Kiowope Capital" className="nav__logo" />
       </Link>
       <nav className="nav__links">
         {links.map((link) => (
