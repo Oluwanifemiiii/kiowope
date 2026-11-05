@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import DiamondMotif from './DiamondMotif'
 
 interface PageHeroProps {
   eyebrow: string
@@ -9,12 +10,12 @@ interface PageHeroProps {
 
 export default function PageHero({ eyebrow, title, subtitle, children }: PageHeroProps) {
   return (
-    <section className="hero hero--page">
-      <div className="hero__texture" />
-      <div className="hero__content" style={{ maxWidth: 720 }}>
-        <p className="hero__eyebrow">{eyebrow}</p>
-        <h1 className="hero__title">{title}</h1>
-        {subtitle && <p className="hero__subtitle">{subtitle}</p>}
+    <section className="page-hero">
+      <DiamondMotif className="page-hero__art" tone="dark" />
+      <div className="page-hero__content">
+        <p className="eyebrow">{eyebrow}</p>
+        <h1 className="page-hero__title">{title}</h1>
+        {subtitle && <p className="page-hero__subtitle">{subtitle}</p>}
         {children}
       </div>
     </section>
