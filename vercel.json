@@ -1,3 +1,7 @@
 {
+  "redirects": [
+    { "source": "/webmail", "destination": "https://da4.host-ww.net/webmail/", "permanent": false },
+    { "source": "/webmail/:path*", "destination": "https://da4.host-ww.net/webmail/", "permanent": false }
+  ],
   "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
 }
